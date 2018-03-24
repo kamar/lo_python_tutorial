@@ -32,7 +32,7 @@ Create a soft link to the tutorial\'s file:
 
     ln -s /home/user/lo_python_tutorial/report
 
-Open a LibreOffice Writer document and go to **Tools --> Macros --> Execute Macro --> My Macros --> report --> list_books** and click execute.
+Open a LibreOffice Writer document and go to **Tools --> Macros --> Run Macro --> My Macros --> report --> homelibrar_sqlite --> list_books** and click execute.
 
 Windows
 *******
