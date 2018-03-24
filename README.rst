@@ -16,13 +16,17 @@ How to run
 ##########
 Linux
 *****
-Copy the turorial directory in your home directory.
+Copy the turorial directory in your home directory, or clone from the repository.
+::
+
+    git clone https://github.com/kamar/lo_python_tutorial.git
+
 Open a terminal and change in libreoffice directory:
 ::
 
     cd .config/libreoffice/4/user/Scripts/python
 
-If the directory Scripts/python doesnot exists create it:
+If the directory Scripts/python does not exists create it:
 ::
 
     mkdir -p .config/libreoffice/4/user/Scripts/python
@@ -32,7 +36,7 @@ Create a soft link to the tutorial\'s file:
 
     ln -s /home/user/lo_python_tutorial/report
 
-Open a LibreOffice Writer document and go to **Tools --> Macros --> Run Macro --> My Macros --> report --> homelibrar_sqlite --> list_books** and click execute.
+Open a LibreOffice Writer document and go to **Tools --> Macros --> Run Macro --> My Macros --> report --> homelibrary_sqlite --> list_books** and click execute.
 
 Windows
 *******
