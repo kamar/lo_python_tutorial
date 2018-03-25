@@ -42,6 +42,13 @@ Windows
 *******
 Under work.
 
+Files in tutorial
+#################
+
+#. homelibrary.db Sqlite3 sample database.
+#. homelibrary_sqlite.py The script.
+
+
 Links
 #####
 * `Python <https://www.python.org/>`_
