@@ -64,7 +64,7 @@ def list_books(*args):
     cursor.ParaStyleName = "Standard"
 
     # Change your path to the database.
-    con, cur = login('/home/km/.config/libreoffice/4/user/Scripts/python/homelibrary.db')
+    con, cur = login(os.path.join(os.path.expanduser("~"), '.config/libreoffice/4/user/Scripts/python/homelibrary.db'))
 
     qry = "select b.isbn, b.title, a.firstname || ' ' || a.surname as author, b.copies_standard, b.copies_avail from tbl_books b, tbl_author a where b.author_id=a.author_id order by b.author_id;"
     cur.execute(qry)
