@@ -40,7 +40,40 @@ Open a LibreOffice Writer document and go to **Tools --> Macros --> Run Macro --
 
 Windows
 *******
-Under work.
+Open a new terminal window and move to the LibreOffice directory:
+::
+
+    cd C:\Program Files\LibreOffice\program
+
+Execute:
+::
+
+    python.exe --version
+
+Find the python version from the Python site and install it.
+In the homelibrary_sqlite.py script find the line:
+::
+
+    try:
+        import sqlite3
+    except ImportError:
+        # Import error, on windows. Add the path to your python installation.
+        # Here for my pc, in home directory AppData\....
+        np = os.path.join(os.path.expanduser("~"), "AppData\Local\Programs\Python\Python35\Lib")
+        sys.path.append(np)
+        sys.path.append(os.path.join(os.path.expanduser("~"), "AppData\Local\Programs\Python\Python35\DLLs"))
+        import sqlite3
+
+and change the the paths to your python installation.
+
+Copy the folder report to the:
+::
+
+    C:\Users\username\AppData\Roaming\LibreOffice\4\user\Scripts\python\
+
+In the above directory open the report\homelibrary_sqlite.py and find the line: *con, cur = login(os.path.join(os.path.expanduser("~"), '.config/libreoffice/4/user/Scripts/python/homelibrary.db'))* and write your file path.
+
+Open a LibreOffice Writer document and go to **Tools --> Macros --> Run Macro --> My Macros --> report --> homelibrary_sqlite --> list_books** and click run.
 
 Files in tutorial
 #################

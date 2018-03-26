@@ -18,9 +18,20 @@
 ########################################################################
 
 import os
-import sqlite3
+import sys
 import datetime
 import uno
+
+try:
+    import sqlite3
+except ImportError:
+    # Import error, on windows. Add the path to your python installationself.
+    # Here for my pc, in home directory AppData\....
+
+    np = os.path.join(os.path.expanduser("~"), "AppData\Local\Programs\Python\Python35\Lib")
+    sys.path.append(np)
+    sys.path.append(os.path.join(os.path.expanduser("~"), "AppData\Local\Programs\Python\Python35\DLLs"))
+    import sqlite3
 
 from com.sun.star.text.ControlCharacter import PARAGRAPH_BREAK
 from com.sun.star.style.ParagraphAdjust import RIGHT
@@ -59,7 +70,7 @@ def list_books(*args):
     text = doc.Text
     cursor = text.createTextCursor()
     cursor.ParaStyleName = "Heading 1"
-    text.insertString(cursor, "Κατάσταση Βιβλίων", 0)
+    text.insertString(cursor, "Κατάσταση Βιβλίων (Sqlite3)", 0)
     text.insertControlCharacter(cursor, PARAGRAPH_BREAK, 0)
     cursor.ParaStyleName = "Standard"
 
