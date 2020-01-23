@@ -9,7 +9,8 @@ Description
 ###########
 
 An example how to write a python script in LibreOffice writer.
-No error handling included.
+
+**No error handling included.**
 
 
 How to run
